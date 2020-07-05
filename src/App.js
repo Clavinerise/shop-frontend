@@ -1,24 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import 'fontsource-roboto';
+import Header from './common/header';
+import Footer from './common/footer';
+import Contact from './contact-view/contact-page';
+import MembershipsPage from './membership-view/membership-page';
+import Home from './home-view/homepage';
+import Products from './product-view/product-list-page';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import './App.scss';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Header />
+        <div className="main-body">
+          <Switch>
+              <Route path="/memberships" component={MembershipsPage}></Route>
+              <Route path="/contact" component={Contact}></Route>
+              <Route path="/products" component={Products}></Route>
+              <Route path="/" component={Home}></Route>
+          </Switch>
+        </div>
+        {/* <ProductItem /> */}
+        <Footer />
+      </Router>
     </div>
   );
 }
