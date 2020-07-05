@@ -16,7 +16,8 @@ const theme = createMuiTheme({
     text: {
       primary: '#ddd',
       secondary: '#333',
-      linkHover: '#eef7f4'
+      linkHover: '#eef7f4',
+      linkSelected: '#61dafb'
     },
   },
   typography: {

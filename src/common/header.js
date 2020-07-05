@@ -20,7 +20,8 @@ const useStyles = makeStyles(theme => ({
     }
   },
   active: {
-    borderBottom: `1px solid ${theme.palette.text.primary}`
+    borderBottom: `1px solid ${theme.palette.text.linkSelected}`,
+    color: theme.palette.text.linkSelected
   }
 }));
 

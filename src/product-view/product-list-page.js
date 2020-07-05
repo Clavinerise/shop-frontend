@@ -6,9 +6,6 @@ const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
     padding: theme.spacing(2),
-  },
-  test: {
-    border: '1px solid black'
   }
 }));
 

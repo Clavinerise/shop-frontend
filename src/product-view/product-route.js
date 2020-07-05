@@ -13,8 +13,8 @@ export default function ProductRoute(props) {
   return (
     <Router>
       <Switch>
+        <Route path={match.path} exact component={ProductList}></Route>
         <Route path={`${match.path}/:id`} component={ProductPage}></Route>
-        <Route path={match.path} component={ProductList}></Route>
       </Switch>
     </Router>
   );
