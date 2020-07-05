@@ -5,7 +5,7 @@ import Footer from './common/footer';
 import Contact from './contact-view/contact-page';
 import MembershipsPage from './membership-view/membership-page';
 import Home from './home-view/homepage';
-import Products from './product-view/product-list-page';
+import Products from './product-view/product-route';
 import {
   BrowserRouter as Router,
   Switch,

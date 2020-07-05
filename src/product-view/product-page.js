@@ -1,7 +1,6 @@
 import React from 'react';
-import { Button, Card, CardContent, Grid, Container } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import ProductItem from './components/product-item';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -13,12 +12,13 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function ProductPage(props) {
+export default function ProductPage() {
   const classes = useStyles();
   
   return (
       <div className={classes.root}>
-        <img src='props.product.productImgUrl' alt='props.product.productName'/>
+        {/* <img src='props.product.productImgUrl' alt='props.product.productName'/> */}
+        <Typography>asfasdf</Typography>
       </div>
   );
 }
