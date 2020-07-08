@@ -1,6 +1,7 @@
 import React from 'react';
 import { Typography, Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import res from '../resource.json';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -21,7 +22,7 @@ export default function ContactPage(props) {
           align='left'
           variant='h6'
           >
-            Contact
+            {res.contact}
         </Typography>
         <Typography 
           color='textSecondary' 

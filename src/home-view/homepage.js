@@ -1,6 +1,7 @@
 import React from 'react';
 import { Typography, Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import res from '../resource.json';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -24,7 +25,7 @@ export default function HomePage(props) {
           align='left'
           variant='h6'
           >
-            Home
+            {res.home}
         </Typography>
         <Typography 
           color='textSecondary' 
