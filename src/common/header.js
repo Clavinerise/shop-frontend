@@ -47,7 +47,10 @@ export default function Header() {
           </div>
 
           <Link to='/login'>
-            <Button variant="outlined" color='textPrimary'>Login</Button>
+            <Button variant="outlined" color='textPrimary'>{res.login}</Button>
+          </Link>
+          <Link to='/register'>
+            <Button variant="outlined" color='textPrimary'>{res.register}</Button>
           </Link>
         </Toolbar>
       </AppBar>

@@ -7,6 +7,7 @@ import MembershipsPage from './membership-view/membership-page';
 import Home from './home-view/homepage';
 import Products from './product-view/product-route';
 import Login from './common/login';
+import Register from './common/register';
 import {
   BrowserRouter as Router,
   Switch,
@@ -25,6 +26,7 @@ function App() {
               <Route path="/contact" component={Contact}></Route>
               <Route path="/products" component={Products}></Route>
               <Route path="/login" component={Login}></Route>
+              <Route path="/register" component={Register}></Route>
               <Route path="/" component={Home}></Route>
           </Switch>
         </div>

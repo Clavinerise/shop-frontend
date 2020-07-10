@@ -15,16 +15,16 @@ const useStyles = makeStyles(theme => ({
 
 export default function ProductItem(props) {
   const classes = useStyles();
+  console.log(props);
   return (
     <Card 
       className={classes.root}
       variant='outlined'
       >
-      <CardActionArea component={ Link } to={location => `${location.pathname}/${props.product.productId}`}>
+      <CardActionArea component={ Link } to={location => `${location.pathname}/${props.product.product_id}`}>
         <CardMedia
           className={classes.media}
-          image={props.product.productImgUrl}
-          title={props.product.productName}
+          image={props.product.img}
         />
         <CardContent>
           <Typography 
@@ -32,15 +32,13 @@ export default function ProductItem(props) {
             align='left'
             variant='h5'
             >
-              {/* hello */}
-            {props.product.productName}
+            {props.product.product_name}
           </Typography>
           <Typography 
             color='textSecondary' 
             align='left'
             >
-              {/* hello2 */}
-            {props.product.productPrice}
+            {props.product.price}
           </Typography>
         </CardContent>
       </CardActionArea>

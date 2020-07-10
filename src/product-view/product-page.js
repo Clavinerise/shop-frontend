@@ -4,6 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Add from '@material-ui/icons/Add';
 import Remove from '@material-ui/icons/Remove';
 import res from '../resource.json';
+import API from '../utils/API';
+import { useParams } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -29,6 +31,9 @@ const useStyles = makeStyles(theme => ({
     marginBottom: '1em',
     padding: '1em',
     // border: '2px solid #ddd'
+  },
+  productImage: {
+    maxWidth: '500px'
   }
 }));
 
@@ -36,12 +41,11 @@ export default function ProductPage() {
   const minProductPurchase = 1;
   const classes = useStyles();
   const firstRender = useRef(true);
-  const [product, setProduct] = useState(0);
+  let { id } = useParams();
+  const [product, setProduct] = useState({});
   const [quantity, setQuantity] = useState(minProductPurchase);
 
   function formValidate(quantity) {
-    console.log('sdfsdf');
-  
     if(quantity <= minProductPurchase) {
       setQuantity(minProductPurchase);
       return;
@@ -55,14 +59,17 @@ export default function ProductPage() {
   useEffect(() => {
     if(firstRender.current) {
       firstRender.current = false;
-      setProduct({
-        productId: '0',
-        productName: 'Tea',
-        productPrice: '400',
-        productImgUrl: 'http://www.snrshopping.com/images/stories/hot_deals/july2019/111554-new.jpg',
-        description: 'hello',
-        stock: 999,
-      });
+      const fetchProduct = async () => {
+        const result = await API.get('/products', {
+          params: {
+            product_id: id
+          }
+        });
+        console.log(result);
+        setProduct(result.data[0]);
+      };
+  
+      fetchProduct();
       return;
     }
 
@@ -84,7 +91,7 @@ export default function ProductPage() {
             className={classes.productSection}
             >
             <Grid item>
-              <img src={product.productImgUrl} alt={product.productName}/>
+              <img className={classes.productImage} src={product.img} alt={product.product_name}/>
             </Grid>
             
             <Grid item>
@@ -92,12 +99,12 @@ export default function ProductPage() {
                 variant='h6'
                 color='textSecondary'
                 >
-                {product.productName}
+                {product.product_name}
               </Typography>
               <Typography
                 color='textSecondary'
                 >
-                {product.productPrice}
+                {product.price}
               </Typography>
 
               <div className={classes.quantity}>
@@ -133,7 +140,7 @@ export default function ProductPage() {
               color='textSecondary'
               variant='h6'
               >
-              {res.productDescription}
+              {res.descrip}
             </Typography>
 
             <Typography
