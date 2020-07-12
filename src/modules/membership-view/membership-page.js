@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography, Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import res from '../resource.json';
+import R from 'res/R';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -28,7 +28,7 @@ export default function MembershipsPage(props) {
           align='left'
           variant='h6'
           >
-            {res.memberships}
+            {R.strings.memberships}
         </Typography>
         <Typography 
           color='textSecondary' 

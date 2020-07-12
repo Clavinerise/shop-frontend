@@ -3,8 +3,8 @@ import { Typography, Grid, IconButton, TextField, Container } from '@material-ui
 import { makeStyles } from '@material-ui/core/styles';
 import Add from '@material-ui/icons/Add';
 import Remove from '@material-ui/icons/Remove';
-import res from '../resource.json';
-import API from '../utils/API';
+import R from 'res/R';
+import API from 'utils/API';
 import { useParams } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
@@ -140,7 +140,7 @@ export default function ProductPage() {
               color='textSecondary'
               variant='h6'
               >
-              {res.descrip}
+              {R.strings.descrip}
             </Typography>
 
             <Typography
@@ -159,7 +159,7 @@ export default function ProductPage() {
               color='textSecondary'
               variant='h6'
               >
-              {res.recommendations}
+              {R.strings.recommendations}
             </Typography>
           </Grid>
         </Grid>

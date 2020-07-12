@@ -1,4 +1,5 @@
-{
+const strings = {
+  "appname": "S&R",
   "home": "Home",
   "products": "Products",
   "memberships": "Memberships",
@@ -14,3 +15,5 @@
   "mobile": "Mobile Number",
   "submit": "Submit"
 }
+
+export default strings;

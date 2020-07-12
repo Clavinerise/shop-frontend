@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Grid, Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import ProductItem from './components/product-item';
-import API from '../utils/API';
+import API from 'utils/API';
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Typography, Grid, IconButton, Divider, Container, Paper, FormControl, Input, InputLabel, FormHelperText } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import res from '../resource.json';
+import R from 'res/R';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -46,7 +46,7 @@ export default function ProductPage() {
   return (
     <Container maxWidth='sm' className={classes.root}>
       <Paper className={classes.loginForm}>
-        <Typography variant='h6' color='textSecondary'>{res.login}</Typography>
+        <Typography variant='h6' color='textSecondary'>{R.strings.login}</Typography>
         {/* <TextField 
           id='email'
           margin='dense'
@@ -57,12 +57,12 @@ export default function ProductPage() {
           /> */}
         <Divider light />
         <FormControl fullWidth margin="normal">
-          <InputLabel htmlFor="email">{res.email}</InputLabel>
+          <InputLabel htmlFor="email">{R.strings.email}</InputLabel>
           <Input id="email" aria-describedby="my-helper-text" />
           {/* <FormHelperText id="my-helper-text">We'll never share your email.</FormHelperText> */}
         </FormControl>
         <FormControl fullWidth>
-          <InputLabel htmlFor="password">{res.password}</InputLabel>
+          <InputLabel htmlFor="password">{R.strings.password}</InputLabel>
           <Input id="password" aria-describedby="my-helper-text" />
           {/* <FormHelperText id="my-helper-text">We'll never share your password.</FormHelperText> */}
         </FormControl>

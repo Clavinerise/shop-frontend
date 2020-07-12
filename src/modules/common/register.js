@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Typography, Button, Grid, IconButton, Divider, Container, Paper, FormControl, Input, InputLabel, FormHelperText } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import res from '../resource.json';
+import R from 'res/R';
 import sha256 from 'crypto-js/sha256';
-import API from '../utils/API';
+import API from 'utils/API';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -28,7 +28,6 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function ProductPage() {
-  // const minProductPurchase = 1;
   const classes = useStyles();
   // const firstRender = useRef(true);
   const [email, setEmail] = useState("");
@@ -80,7 +79,7 @@ export default function ProductPage() {
   return (
     <Container maxWidth='sm' className={classes.root}>
       <Paper className={classes.loginForm}>
-        <Typography variant='h6' color='textSecondary'>{res.register}</Typography>
+        <Typography variant='h6' color='textSecondary'>{R.strings.register}</Typography>
         {/* <TextField 
           id='email'
           margin='dense'
@@ -92,7 +91,7 @@ export default function ProductPage() {
         <Divider light />
         <form onSubmit={handleSubmit}>
           <FormControl fullWidth margin="normal" required>
-            <InputLabel htmlFor="firstname">{res.firstname}</InputLabel>
+            <InputLabel htmlFor="firstname">{R.strings.firstname}</InputLabel>
             <Input 
               id="firstname" 
               value={firstname} 
@@ -101,7 +100,7 @@ export default function ProductPage() {
             {/* <FormHelperText id="my-helper-text">We'll never share your email.</FormHelperText> */}
           </FormControl>
           <FormControl fullWidth margin="normal" required>
-            <InputLabel htmlFor="lastname">{res.lastname}</InputLabel>
+            <InputLabel htmlFor="lastname">{R.strings.lastname}</InputLabel>
             <Input 
               id="lastname" 
               value={lastname} 
@@ -110,7 +109,7 @@ export default function ProductPage() {
             {/* <FormHelperText id="my-helper-text">We'll never share your email.</FormHelperText> */}
           </FormControl>
           <FormControl fullWidth margin="normal" required>
-            <InputLabel htmlFor="email">{res.email}</InputLabel>
+            <InputLabel htmlFor="email">{R.strings.email}</InputLabel>
             <Input 
               id="email" 
               value={email}
@@ -119,7 +118,7 @@ export default function ProductPage() {
             {/* <FormHelperText id="my-helper-text">We'll never share your email.</FormHelperText> */}
           </FormControl>
           <FormControl fullWidth margin="normal" required>
-            <InputLabel htmlFor="password">{res.password}</InputLabel>
+            <InputLabel htmlFor="password">{R.strings.password}</InputLabel>
             <Input 
               type="password"
               id="password" 
@@ -129,7 +128,16 @@ export default function ProductPage() {
             {/* <FormHelperText id="my-helper-text">We'll never share your password.</FormHelperText> */}
           </FormControl>
 
-          <Button type="submit" variant="contained" onClick={handleSubmit} className="submitBtn" fullWidth color="primary" disabled={submitDisabled}>{res.submit}</Button>
+          <Button 
+            type="submit" 
+            variant="contained" 
+            onClick={handleSubmit} 
+            className="submitBtn" 
+            fullWidth 
+            color="primary" 
+            disabled={submitDisabled}>
+              {R.strings.submit}
+          </Button>
         </form>
       </Paper>
     </Container>
