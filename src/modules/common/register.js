@@ -4,6 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import R from 'res/R';
 import sha256 from 'crypto-js/sha256';
 import API from 'utils/API';
+// import Toast from './components/toast';
+import { Toast } from '@common/components/toast';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -35,6 +37,7 @@ export default function ProductPage() {
   const [firstname, setFname] = useState("");
   const [lastname, setLname] = useState("");
   const [submitDisabled, setSubmitDisabled] = useState(true);
+  const [openToast, setOpenToast] = useState(false);
 
   function formValidate() {  
     if(!firstname) {setSubmitDisabled(true); return;}
@@ -50,19 +53,20 @@ export default function ProductPage() {
 
   function handleSubmit(event) {
     console.log(event);
-    API.post('/register', {
-      fname: firstname,
-      lname: lastname,
-      email: email,
-      pw: hashPw(password).toString()
-    }, {headers:{"Content-Type" : "application/json"}})
-    .then((res) => {
-      console.log(res)
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+    // API.post('/register', {
+    //   fname: firstname,
+    //   lname: lastname,
+    //   email: email,
+    //   pw: hashPw(password).toString()
+    // }, {headers:{"Content-Type" : "application/json"}})
+    // .then((res) => {
+    //   console.log(res)
+    // })
+    // .catch((err) => {
+    //   console.log(err);
+    // });
     event.preventDefault();
+    setOpenToast(true);
   }
   function handleChange(event) {
     // this.setState
@@ -138,6 +142,8 @@ export default function ProductPage() {
             disabled={submitDisabled}>
               {R.strings.submit}
           </Button>
+    <Toast open={openToast}/>
+
         </form>
       </Paper>
     </Container>

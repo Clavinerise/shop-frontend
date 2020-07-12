@@ -3,7 +3,8 @@
     "baseUrl": "./src",
     "paths": {
       "res/*": ["./src/res/*"],
-      "utils/*": ["./src/utils/*"]
+      "utils/*": ["./src/utils/*"],
+      "@common/components/*": ["./src/modules/common/components/*"],
     }
   }
 }

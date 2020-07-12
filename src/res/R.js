@@ -1,7 +1,9 @@
 import strings from './strings';
+import colors from './colors';
 
 const R = {
-  strings
+  strings,
+  colors
 }
 
 export default R;
