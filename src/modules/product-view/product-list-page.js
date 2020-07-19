@@ -10,37 +10,6 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-// const products = [
-//   {
-//     productId: '0',
-//     productName: 'Tea',
-//     productPrice: '400',
-//     productImgUrl: 'http://www.snrshopping.com/images/stories/hot_deals/july2019/111554-new.jpg',
-//     description: 'hello'
-//   },
-//   {
-//     productId: '1',
-//     productName: 'Coffee',
-//     productPrice: '400',
-//     productImgUrl: 'http://www.snrshopping.com/images/stories/hot_deals/aug2019/109514-new.jpg',
-//     description: 'hello'
-//   },
-//   {
-//     productId: '2',
-//     productName: 'Soda',
-//     productPrice: '400',
-//     productImgUrl: 'http://www.snrshopping.com/images/resized/images/stories/hot_deals/july2019/66120-new_210_120.jpg',
-//     description: 'hello'
-//   },
-//   {
-//     productId: '4',
-//     productName: 'Water',
-//     productPrice: '300',
-//     productImgUrl: 'http://www.snrshopping.com/images/stories/hot_deals/july2019/111554-new.jpg',
-//     description: 'hello'
-//   }
-// ]
-
 export default function ProductList(props) {
   const classes = useStyles();
   const [products, setProducts] = useState([]);
@@ -48,7 +17,7 @@ export default function ProductList(props) {
   
   useEffect(() => {
     const fetchProducts = async () => {
-      const result = await API.get('/products', );
+      const result = await API.get('/products');
       console.log(result);
       setProducts(result.data);
     };

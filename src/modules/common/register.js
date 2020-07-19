@@ -57,16 +57,16 @@ export default function ProductPage() {
       lname: lastname,
       email: email,
       pw: hashPw(password).toString()
-    }, {headers:{"Content-Type" : "application/json"}})
+    }, {
+      headers:{"Content-Type" : "application/json"}
+    })
     .then((res) => {
       console.log(res);
       toast('Success');
     })
     .catch((err) => {
-      toast(err.response);
-
-      console.log("dasdas");
-      console.log(err.response);
+      if(err.response.data.error)
+        toast(err.response.data.error);
     });
     event.preventDefault();
   }
