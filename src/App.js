@@ -9,6 +9,8 @@ import modules from './modules';
 // import Products from './product-view/product-route';
 import Login from './modules/common/login';
 import Register from './modules/common/register';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {
   BrowserRouter as Router,
   Switch,
@@ -38,6 +40,10 @@ function App() {
         </div>
         {/* <ProductItem /> */}
         <Footer />
+        <ToastContainer 
+          position="bottom-center"
+          autoClose={5000}
+          hideProgressBar={true}/>
       </Router>
     </div>
   );

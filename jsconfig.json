@@ -4,7 +4,7 @@
     "paths": {
       "res/*": ["./src/res/*"],
       "utils/*": ["./src/utils/*"],
-      "@common/components/*": ["./src/modules/common/components/*"],
+      "components/*": ["src/components/*"]
     }
   }
 }
